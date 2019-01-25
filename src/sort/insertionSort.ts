@@ -5,15 +5,13 @@ function InsertionSort(alist) {
         var temp = alist[i];
         alist[i] = alist[j];
         alist[j] = temp;
-        i--
-        console.log(alist)
-      }else{
-        break
+        i--;
+      } else {
+        break;
       }
     }
   }
 }
 
 var alist: Array<number> = [91, 921, 1000, 5, 2, 6, 9, 4, 9, 12, 24, 46, 68];
-console.log(alist)
 InsertionSort(alist);
