@@ -1,23 +1,26 @@
-function SelectionSort(alist) {
-  for (var i = 0; i <= alist.length - 1; i++) {
-    var findMinVal = false;
+import { OnSwap } from "./event";
+import { swap } from "./utility"
 
-    for (var j = i + 1; j <= alist.length - 1; j++) {
-      if (alist[j] < alist[i]) {
-        var temp = alist[i];
-        alist[i] = alist[j];
-        alist[j] = temp;
+function SelectionSort<Value>({
+  array,
+  OnSwap = () => {}
+}: {
+  array: Value[];
+  OnSwap?: OnSwap<Value>;
+}): void {
+  for (let i = 0; i <= array.length - 1; i++) {
+    let minValIndex = i;
 
-        findMinVal = true;
+    for (let j = i + 1; j <= array.length - 1; j++) {
+      if (array[minValIndex] > array[j]) {
+        minValIndex = j;
       }
     }
-
-    if (!findMinVal) {
-      break;
+    if (array[i] === array[minValIndex]) {
+      continue;
     }
+    swap(array,i,minValIndex,OnSwap);
   }
 }
 
-var alist: Array<number> = [5, 79, 6, 9, 4, 9, 12, 24, 46, 68];
-
-SelectionSort(alist);
+export default SelectionSort;
