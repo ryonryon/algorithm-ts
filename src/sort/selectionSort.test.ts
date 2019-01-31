@@ -10,7 +10,7 @@ describe("selectionSort test", () => {
         expect(array).toEqual([2,3,4,5,7,42]);
     });
 
-    test("", () => {
+    test("confirm that if the sort process is correct", () => {
 
         const changesOnSwap: number[][] = [];
         const array = [7,3,2,4,5,42];
