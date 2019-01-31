@@ -1,5 +1,5 @@
 import { OnSwap } from "./event";
-import { swap } from "./utility"
+import { swap } from "./utility";
 
 function SelectionSort<Value>({
   array,
